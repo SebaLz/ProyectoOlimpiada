@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Crear nuevo pedido</h1>
+
+{{error}}
+<div class="container ">
+<form action="/create_task/" method="POST" class="row">
+  {% csrf_token %}
+  <div class="" >
+    <form class="d-flex flex-row">
+      <h4> Ingresar titulo </h4>
+      <div class="col-md-6">
+        {{form.title}}
+      </div>
+      </div>
+      <div class="col-md-6">
+        <h4> Ingresar Descripcion </h4>
+        {{form.description}}
+      </div>
+      <div style="position: fixed;
+      left: 12.5%; bottom: 12.5%;">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+</form>
+
+</div>
+{% endblock %}
